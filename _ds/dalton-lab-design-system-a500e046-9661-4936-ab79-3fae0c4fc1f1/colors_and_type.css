@@ -1,0 +1,192 @@
+/* ============================================================
+   DALTON LAB — Design System Foundations
+   colors_and_type.css
+   Import after the webfonts (see fonts.css / Google Fonts link).
+   ============================================================ */
+
+/* ---- Webfonts (Google Fonts) -------------------------------
+   Bricolage Grotesque  → --display  (titles + body, 200–800)
+   Fraunces (italic)    → --serif    (highlights / taglines ONLY)
+   JetBrains Mono       → --mono     (eyebrows, labels, numbers)
+------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Font families ---------- */
+  --display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; /* @kind font */
+  --serif:   'Fraunces', Georgia, 'Times New Roman', serif; /* @kind font */
+  --mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; /* @kind font */
+
+  /* ---------- Brand accents ---------- */
+  --cyan:        #33ADE5;   /* primary accent */
+  --cyan-bright: #5AC2EE;   /* hover / glow */
+  --cyan-deep:   #1B7FB5;   /* gradient border end, pressed */
+  --purple:      #A855F7;   /* support accent */
+  --purple-deep: #7E3CC9;
+
+  --cyan-faint:  rgba(51, 173, 229, 0.18);  /* 1px borders */
+  --cyan-glow:   rgba(51, 173, 229, 0.28);
+  --purple-glow: rgba(168, 85, 247, 0.22);
+
+  /* ---------- DARK THEME (default) ---------- */
+  --bg-0:   #0a1628;        /* gradient start */
+  --bg-1:   #0d1d36;        /* gradient end   */
+  --bg-grad: linear-gradient(160deg, #0a1628 0%, #0d1d36 100%);
+  --surface:    #0f2138;    /* raised card on dark */
+  --surface-2:  #13294582;  /* translucent panel */
+  --border:     rgba(51, 173, 229, 0.18);
+  --border-2:   rgba(232, 238, 245, 0.08);
+
+  --text:   #e8eef5;        /* level 1 — headings, key copy */
+  --text-2: #b8c8db;        /* level 2 — body */
+  --text-3: #8aa5c2;        /* level 3 — secondary / captions */
+  --text-4: #5f7a98;        /* level 4 — eyebrows, footnotes */
+
+  /* ---------- Radii ---------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-tile: 22px;           /* the app-icon logo tile */
+  --r-pill: 999px;
+
+  /* ---------- Shadows / glow ---------- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.35);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,0.45);
+  --glow-cyan: 0 0 0 1px var(--cyan-faint), 0 0 40px -8px var(--cyan-glow);
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+}
+
+/* ---------- LIGHT THEME ---------- */
+:root.light, .theme-light {
+  --bg-grad: #ffffff;
+  --bg-0: #ffffff;
+  --bg-1: #f6f9fc;
+  --surface:   #ffffff;
+  --surface-2: #f6f9fc;
+  --border:   #e4ebf2;
+  --border-2: #eef3f8;
+
+  --text:   #0a0a0a;        /* --l-text  */
+  --text-2: #2c3a4a;        /* --l-text-2 */
+  --text-3: #5f7287;        /* --l-text-3 */
+  --text-4: #9aacbf;        /* --l-text-4 */
+  /* cyan accent stays identical in light */
+}
+
+/* ============================================================
+   TYPE SCALE — semantic roles
+   Display & body both use Bricolage Grotesque.
+   ============================================================ */
+.display-1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+.h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+.lead {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.body {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+.small {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+
+/* The signature: Fraunces italic, used ONLY for highlights. */
+.highlight, em.highlight {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--cyan);
+  font-size: 1.04em;        /* optically match Bricolage cap height */
+}
+
+/* Eyebrows / labels / technical numbers / footer / counter */
+.eyebrow {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+.label, .mono {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+}
+
+/* ============================================================
+   SIGNATURE BACKGROUND TREATMENTS
+   ============================================================ */
+
+/* Dot grid with radial mask — drop on a dark section */
+.dl-dotgrid {
+  background-image: radial-gradient(rgba(51,173,229,0.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 0%, transparent 75%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 0%, transparent 75%);
+}
+
+/* Cyan + purple radial glow */
+.dl-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(50% 40% at 18% 8%, var(--cyan-glow), transparent 70%),
+    radial-gradient(45% 45% at 88% 92%, var(--purple-glow), transparent 72%);
+}
+
+/* Thin cyan bar at top of light slides */
+.dl-topbar { border-top: 3px solid var(--cyan); }
+
+/* Faint 1px hairline */
+.dl-hairline { border: 1px solid var(--border); }

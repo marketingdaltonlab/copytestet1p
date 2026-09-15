@@ -1,0 +1,4 @@
+source/
+.staticrypt.json
+encrypted/
+.DS_Store
