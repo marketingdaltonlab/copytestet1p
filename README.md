@@ -1,5 +1,5 @@
-# copytestet1p · Landing da Imersão T1P em revisão
+# copytestet1p · Prévia da landing v3 da Imersão T1P
 
-Versão de revisão da landing v2 da Imersão T1P (copy nova), gerada no Claude Design. A página (`index.html`) é cifrada com StatiCrypt e abre só com senha; o HTML aberto fica em `source/`, fora do repositório. `support.js`, `image-slot.js`, `_ds/` e `assets/` são os arquivos de apoio do design (sem texto da página).
+Prévia protegida por senha da landing nova, montada em cima da página em produção (repo daltonlabtech/imersao-t1p, branch landing-v3). Serve pra revisão do time antes do merge na main.
 
-Pra atualizar: substitua `source/Imersao T1P.dc.html` (e os assets, se mudarem) e rode `./publicar.sh`.
+`index.html` cifrado com StatiCrypt; a fonte fica em `source/` (fora do repo). Assets (fotos, logos, vídeos) são os mesmos da página em produção.
